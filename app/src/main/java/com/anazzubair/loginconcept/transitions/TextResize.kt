@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+/* Taken from https://github.com/googlesamples/android-unsplash/blob/master/app/src/main/java/com/example/android/unsplash/transition/TextResize.java
+*  However, instead of inheriting from Framework Transition, I am inheriting from Transitions Everywhere library
+*  -- Anaz
+* */
+
 package com.anazzubair.loginconcept.transitions
 
 import android.animation.Animator
