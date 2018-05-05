@@ -5,6 +5,12 @@ import com.bluelinelabs.conductor.Controller
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 
+/*
+ * Adapter from Eric Kucks demo code https://github.com/EricKuck/ConductorGlideDemo
+ * There is another implementation here https://gist.github.com/sevar83/7b5e151233481b629e3d1fb1be7327dc
+ * Glide issue https://github.com/bumptech/glide/issues/2156
+*/
+
 object ControllerRequestManager {
 
     fun with(controller: Controller) : RequestManager {
