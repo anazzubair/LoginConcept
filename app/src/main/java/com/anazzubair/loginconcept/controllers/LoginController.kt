@@ -54,7 +54,7 @@ class LoginController : BaseAuthController() {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun fold() {
-        lock = false
+        lock = true
         val padding = getTextPadding()
 
         val rotateTransition = Rotate()
@@ -74,7 +74,7 @@ class LoginController : BaseAuthController() {
                     caption.rotation = 0f
                     caption.isVerticalText = true
                     caption.requestLayout()
-
+                    lock = false
                 }
             })
         }
@@ -86,6 +86,7 @@ class LoginController : BaseAuthController() {
         params.verticalBias = 0.5f
         caption.layoutParams = params
         caption.translationX = caption.width / 8 - padding
+
     }
 
     private fun getTextPadding(): Float {

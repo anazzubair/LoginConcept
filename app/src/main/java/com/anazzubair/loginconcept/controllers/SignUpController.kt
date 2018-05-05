@@ -83,8 +83,7 @@ class SignUpController : BaseAuthController() {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun fold() {
-        lock = false
-
+        lock = true
         val rotateTransition = Rotate()
         rotateTransition.startAngle = 0f
         rotateTransition.endAngle = -90f
@@ -103,12 +102,13 @@ class SignUpController : BaseAuthController() {
                     caption.rotation = 0f
                     caption.isVerticalText = true
                     caption.requestLayout()
-
+                    lock = false
                 }
             })
         }
         TransitionManager.beginDelayedTransition(parent, transitionSet)
         foldStuff()
         caption.translationX = -caption.width / 8 + getTextPadding()
+
     }
 }

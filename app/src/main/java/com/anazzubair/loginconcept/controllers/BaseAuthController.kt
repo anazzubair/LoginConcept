@@ -50,6 +50,7 @@ abstract class BaseAuthController : Controller() {
     private fun unfold() {
         if(lock) return
 
+        lock = true
         caption.isVerticalText = false
         caption.requestLayout()
 
@@ -78,7 +79,6 @@ abstract class BaseAuthController : Controller() {
             caption.layoutParams = params
         }
         callback.show(this)
-        lock = true
     }
 
     private fun clearFocus() = views.forEach { it.clearFocus() }
