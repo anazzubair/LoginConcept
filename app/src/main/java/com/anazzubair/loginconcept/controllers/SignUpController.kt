@@ -53,7 +53,7 @@ class SignUpController : BaseAuthController() {
 
                 editText.setOnFocusChangeListener { _, hasFocus ->
                     if(hasFocus) return@setOnFocusChangeListener
-                    editText.isSelected = (editText.text.isNotEmpty())
+                    editText.isSelected = (editText.text!!.isNotEmpty())
                 }
             }
         }

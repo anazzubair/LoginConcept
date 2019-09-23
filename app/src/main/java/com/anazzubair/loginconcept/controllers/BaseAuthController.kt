@@ -47,7 +47,7 @@ abstract class BaseAuthController : Controller() {
     abstract fun getAuthLayoutId(): Int
     abstract fun fold()
 
-    private fun unfold() {
+    fun unfold() {
         if(lock) return
 
         lock = true

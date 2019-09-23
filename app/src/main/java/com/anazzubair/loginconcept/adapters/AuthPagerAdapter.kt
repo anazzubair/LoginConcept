@@ -50,6 +50,12 @@ class AuthPagerAdapter(private val host: Controller, private val viewPager: Anim
         return (1 - (textSize + textPadding) / viewPager.width)
     }
 
+    fun showSelectedController(position: Int) {
+        val router = this.getRouter(position)
+        val controller = router!!.backstack[router.backstackSize - 1].controller() as BaseAuthController
+        controller.unfold()
+    }
+
     override fun show(nextController: BaseAuthController) {
         val controllerIndex = pages.keyAt(pages.indexOfValue(nextController))
         viewPager.setCurrentItem(controllerIndex, true)

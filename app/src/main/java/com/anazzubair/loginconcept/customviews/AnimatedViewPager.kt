@@ -8,6 +8,8 @@ import android.view.MotionEvent
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.Interpolator
 import android.widget.Scroller
+import com.anazzubair.loginconcept.adapters.AuthPagerAdapter
+import com.anazzubair.loginconcept.controllers.BaseAuthController
 
 class AnimatedViewPager : ViewPager {
 
@@ -30,11 +32,21 @@ class AnimatedViewPager : ViewPager {
         } catch (e: Exception) {
         }
 
+        this.addOnPageChangeListener(object: OnPageChangeListener {
+            override fun onPageScrollStateChanged(p0: Int) {
+
+            }
+
+            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
+
+            }
+
+            override fun onPageSelected(p0: Int) =
+                (this@AnimatedViewPager.adapter as AuthPagerAdapter).showSelectedController(p0)
+
+        })
+
     }
-
-    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean = false
-
-    override fun onTouchEvent(ev: MotionEvent): Boolean = false
 
     inner class ScrollerCustomDuration : Scroller {
 
