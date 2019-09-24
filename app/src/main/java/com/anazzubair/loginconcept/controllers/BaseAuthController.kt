@@ -1,22 +1,22 @@
 package com.anazzubair.loginconcept.controllers
 
-import android.support.annotation.LayoutRes
-import android.support.constraint.ConstraintLayout
-import android.support.design.widget.TextInputEditText
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewPager
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.viewpager.widget.ViewPager
 import com.anazzubair.loginconcept.R
 import com.anazzubair.loginconcept.customviews.VerticalTextView
 import com.anazzubair.loginconcept.transitions.Rotate
 import com.anazzubair.loginconcept.transitions.TextResize
 import com.bluelinelabs.conductor.Controller
-import com.transitionseverywhere.ChangeBounds
-import com.transitionseverywhere.TransitionManager
-import com.transitionseverywhere.TransitionSet
+import com.google.android.material.textfield.TextInputEditText
+import androidx.transition.ChangeBounds
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 
 abstract class BaseAuthController : Controller() {
@@ -73,9 +73,9 @@ abstract class BaseAuthController : Controller() {
             caption.setTextColor(ContextCompat.getColor(parent.context, R.color.color_label))
             caption.translationX = 0f
             val params = ConstraintLayout.LayoutParams::class.java.cast(caption.layoutParams)
-            params.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID
-            params.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID
-            params.verticalBias = 0.78f
+            params!!.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID
+            params!!.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID
+            params!!.verticalBias = 0.78f
             caption.layoutParams = params
         }
         callback.show(this)

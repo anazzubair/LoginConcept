@@ -7,8 +7,8 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import com.anazzubair.loginconcept.R
-import com.transitionseverywhere.Transition
-import com.transitionseverywhere.TransitionValues
+import androidx.transition.Transition
+import androidx.transition.TransitionValues
 
 class Rotate : Transition
 {
@@ -39,7 +39,7 @@ class Rotate : Transition
         transitionValues.values[PROPNAME_ROTATION] = endAngle
     }
 
-    override fun createAnimator(sceneRoot: ViewGroup?, startValues: TransitionValues?,
+    override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues?,
                                 endValues: TransitionValues?): Animator? {
         if (startValues == null || endValues == null) {
             return null

@@ -2,9 +2,9 @@ package com.anazzubair.loginconcept.customviews
 
 import android.content.Context
 import android.graphics.Canvas
-import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.util.Log
+import androidx.appcompat.widget.AppCompatTextView
 import com.anazzubair.loginconcept.R
 
 class VerticalTextView : AppCompatTextView {

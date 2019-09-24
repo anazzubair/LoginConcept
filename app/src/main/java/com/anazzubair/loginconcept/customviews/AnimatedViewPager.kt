@@ -2,12 +2,12 @@ package com.anazzubair.loginconcept.customviews
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.support.v4.view.ViewPager
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.Interpolator
 import android.widget.Scroller
+import androidx.viewpager.widget.ViewPager
 import com.anazzubair.loginconcept.adapters.AuthPagerAdapter
 import com.anazzubair.loginconcept.controllers.BaseAuthController
 

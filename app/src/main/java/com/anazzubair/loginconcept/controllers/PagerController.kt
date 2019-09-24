@@ -4,14 +4,14 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.graphics.Bitmap
 import android.graphics.Point
-import android.support.annotation.ColorRes
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.ColorRes
 import com.anazzubair.loginconcept.R
 import com.anazzubair.loginconcept.adapters.AuthPagerAdapter
 import com.anazzubair.loginconcept.customviews.AnimatedViewPager

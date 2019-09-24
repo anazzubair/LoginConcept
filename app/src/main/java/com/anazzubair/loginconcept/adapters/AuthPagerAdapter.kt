@@ -2,8 +2,8 @@ package com.anazzubair.loginconcept.adapters
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import android.util.SparseArray
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator

@@ -41,8 +41,8 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.transitionseverywhere.Transition
-import com.transitionseverywhere.TransitionValues
+import androidx.transition.Transition
+import androidx.transition.TransitionValues
 
 /**
  * Transitions a TextView from one font size to another. This does not

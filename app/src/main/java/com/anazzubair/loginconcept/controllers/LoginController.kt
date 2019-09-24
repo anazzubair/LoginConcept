@@ -4,20 +4,17 @@ import android.annotation.TargetApi
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
-import android.support.constraint.ConstraintLayout
-import android.support.design.widget.TextInputLayout
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.TypedValue
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.transition.*
 import com.anazzubair.loginconcept.R
 import com.anazzubair.loginconcept.transitions.Rotate
 import com.anazzubair.loginconcept.transitions.TextResize
-import com.transitionseverywhere.ChangeBounds
-import com.transitionseverywhere.Transition
-import com.transitionseverywhere.TransitionManager
-import com.transitionseverywhere.TransitionSet
+import com.google.android.material.textfield.TextInputLayout
 
 class LoginController : BaseAuthController() {
 
@@ -67,8 +64,8 @@ class LoginController : BaseAuthController() {
             addTransition(rotateTransition)
             addTransition(TextResize().addTarget(caption))
             ordering = TransitionSet.ORDERING_TOGETHER
-            addListener(object : Transition.TransitionListenerAdapter() {
-                override fun onTransitionEnd(transition: Transition?) {
+            addListener(object : TransitionListenerAdapter() {
+                override fun onTransitionEnd(transition: Transition) {
                     super.onTransitionEnd(transition)
                     caption.translationX = -1 * padding
                     caption.rotation = 0f
@@ -82,8 +79,8 @@ class LoginController : BaseAuthController() {
         caption.setTextSize(TypedValue.COMPLEX_UNIT_PX, caption.textSize / 2)
         caption.setTextColor(Color.WHITE)
         val params = ConstraintLayout.LayoutParams::class.java.cast(caption.layoutParams)
-        params.leftToLeft = ConstraintLayout.LayoutParams.UNSET
-        params.verticalBias = 0.5f
+        params!!.leftToLeft = ConstraintLayout.LayoutParams.UNSET
+        params!!.verticalBias = 0.5f
         caption.layoutParams = params
         caption.translationX = caption.width / 8 - padding
 
